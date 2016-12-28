@@ -1,5 +1,6 @@
 package com.example.medvedomg.urantestapp.ui.presenter;
 
+import com.example.medvedomg.urantestapp.data.TestdbModule;
 import com.example.medvedomg.urantestapp.ui.activity.MainActivity;
 import com.example.medvedomg.urantestapp.ui.activity.MainView;
 
@@ -16,7 +17,7 @@ public class MainPresenterImpl {
 
     public static final String TAG = Class.class.getSimpleName();
 
-    public MainPresenterImpl(MainView mMainView) {
+    public MainPresenterImpl(MainView mMainView, TestdbModule testdbModule) {
         this.mMainView = mMainView;
     }
 
