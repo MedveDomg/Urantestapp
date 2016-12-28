@@ -51,6 +51,8 @@ public class MainActivity extends AppCompatActivity implements MainView{
 
         mRvList.setLayoutManager(llManger);
 
+        mMainPresenter.loadData();
+
     }
 
     @Override

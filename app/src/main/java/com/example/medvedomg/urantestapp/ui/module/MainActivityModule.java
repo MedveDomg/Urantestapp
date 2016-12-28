@@ -35,20 +35,20 @@ public class MainActivityModule {
 
     @Provides
     @ActivityScope
-    Adapter provideAdapter(MainView mainView) {
-        return new Adapter(mainView);
+    MainActivity provideMainActivity() {
+        return new MainActivity();
     }
 
     @Provides
     @ActivityScope
-    Context provideContext() {
-        return new MainActivity().getApplicationContext();
+    Adapter provideAdapter(MainActivity mainActivity) {
+        return new Adapter(mainActivity);
     }
 
     @Provides
     @ActivityScope
-    LinearLayoutManager provideLinearLayoutManager(Context context) {
-        return new LinearLayoutManager(context);
+    LinearLayoutManager provideLinearLayoutManager(Application application) {
+        return new LinearLayoutManager(application);
     }
 
     @Provides

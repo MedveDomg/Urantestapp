@@ -16,8 +16,26 @@ import dagger.Provides;
 @Module
 public class TestdbModule extends SQLiteOpenHelper {
 
+    private static final int DATABASE_VERSION = 2;
+    private static final String DATABASE_NAME = "testdb";
+    private static final String TABLE_FILES = "files";
 
-    Context mContext;
+    private static final String FILE_ID = "id";
+
+    private static final String FILE_NAME = "filename";
+
+    private static final String FILE_BAR = "bartype";
+
+    private static final String FILE_DATA_MODIFIED = "data";
+
+
+    private Context mContext;
+
+    String CREATE_FILES_TABLE = "CREATE TABLE " + TABLE_FILES + "("
+
+            + FILE_ID + " INTEGER PRIMARY KEY," + FILE_NAME + " TEXT,"
+
+            + FILE_BAR + " TEXT," + FILE_DATA_MODIFIED + " TEXT" + ")";
 
 
     public TestdbModule(Context context) {
@@ -27,6 +45,7 @@ public class TestdbModule extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+        db.execSQL(CREATE_FILES_TABLE);
 
     }
 

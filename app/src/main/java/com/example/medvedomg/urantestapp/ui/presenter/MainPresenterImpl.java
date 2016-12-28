@@ -8,7 +8,7 @@ import com.example.medvedomg.urantestapp.ui.activity.MainView;
  * Created by medvedomg on 28.12.16.
  */
 
-public class MainPresenterImpl {
+public class MainPresenterImpl implements MainPresenter{
 
 
     MainActivity mMainActivity;
@@ -22,4 +22,8 @@ public class MainPresenterImpl {
     }
 
 
+    @Override
+    public void loadData() {
+
+    }
 }

@@ -5,4 +5,7 @@ package com.example.medvedomg.urantestapp.ui.presenter;
  */
 
 public interface MainPresenter {
+
+    void loadData();
+
 }
