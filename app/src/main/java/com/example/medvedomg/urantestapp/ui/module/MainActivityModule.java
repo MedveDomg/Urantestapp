@@ -1,7 +1,6 @@
 package com.example.medvedomg.urantestapp.ui.module;
 
 import android.app.Application;
-import android.content.Context;
 import android.support.v7.widget.LinearLayoutManager;
 
 import com.example.medvedomg.urantestapp.data.TestdbModule;
@@ -22,9 +21,10 @@ public class MainActivityModule {
 
     public MainView mMainView;
 
+    public MainActivity mMainActivity;
 
-    public MainActivityModule(MainView mMainView) {
-        this.mMainView = mMainView;
+    public MainActivityModule(MainActivity mainActivity) {
+        this.mMainActivity = mainActivity;
     }
 
     @Provides
@@ -36,7 +36,7 @@ public class MainActivityModule {
     @Provides
     @ActivityScope
     MainActivity provideMainActivity() {
-        return new MainActivity();
+        return mMainActivity;
     }
 
     @Provides
@@ -53,8 +53,8 @@ public class MainActivityModule {
 
     @Provides
     @ActivityScope
-    MainPresenterImpl providePresenter(MainView mainView, TestdbModule testdbModule) {
-        return new MainPresenterImpl(mainView, testdbModule);
+    MainPresenterImpl providePresenter(MainActivity mainActivity, TestdbModule testdbModule) {
+        return new MainPresenterImpl(mainActivity, testdbModule);
     }
 
 }
